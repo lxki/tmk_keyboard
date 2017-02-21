@@ -109,6 +109,8 @@ extern const uint16_t fn_actions[];
 
 enum function_id {
   BOOTLOADER,
+  LEFT_SHIFT_PRESS,
+  RIGHT_SHIFT_PRESS
 };
 
 void bootloader(void);
