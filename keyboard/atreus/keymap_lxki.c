@@ -96,37 +96,37 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
   }
 
   if (id == LEFT_SHIFT_PRESS || id == RIGHT_SHIFT_PRESS) {
-    uint8_t curr_weak_mods = 0;
+    uint8_t curr_mods = 0;
 
-    // Set weak_mods value for each shift key 
+    // Set mods value for each shift key 
     if (id == LEFT_SHIFT_PRESS) {
-      curr_weak_mods = MOD_BIT(KC_LSHIFT);
+      curr_mods = MOD_BIT(KC_LSHIFT);
     } else {
-      curr_weak_mods = MOD_BIT(KC_RSHIFT);
+      curr_mods = MOD_BIT(KC_RSHIFT);
     }
 
     if (record->event.pressed) {
-      // Get the previous weak_mods value
-      uint8_t prev_weak_mods = get_weak_mods();
+      // Get the previous mods value
+      uint8_t prev_mods = get_mods();
 
-      // When a shift key is pressed, check previous weak_mods value.
+      // When a shift key is pressed, check previous mods value.
       // If 0, then no shift key is held down.
       // If not 0, then at least one shift key is held down.
-      if (prev_weak_mods != 0) {
+      if (prev_mods != 0) {
         // Toggle capslock if more than one shift key is pressed. 
         add_key(KC_CAPSLOCK);
         send_keyboard_report();
         del_key(KC_CAPSLOCK);
         send_keyboard_report();
       } else {
-        // Set the appropriate weak_mods value if just one shift
+        // Set the appropriate mods value if just one shift
         // key is pressed.
-        add_weak_mods(curr_weak_mods);
+        add_mods(curr_mods);
         send_keyboard_report();
       }
     } else {
-      // Unset the weak_mods value when shift key is released. 
-      del_weak_mods(curr_weak_mods);
+      // Unset the mods value when shift key is released. 
+      del_mods(curr_mods);
       send_keyboard_report();
     }
   }
