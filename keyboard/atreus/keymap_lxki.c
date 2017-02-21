@@ -43,17 +43,17 @@
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 
 /*
- * vlup nop  nop  nop  nop       ||      f12    f7  f8   f9  nop
- * vldn nop  nop  nop  nop       ||      f10    f4  f5   f6  nop
+ * vlup msb1 msup msb2 mswup     ||      f12    f7  f8   f9  nop
+ * vldn msle msdn msri mswdn     ||      f10    f4  f5   f6  nop
  * mute nop  nop  nop  nop       ||      f11    f1  f2   f3  nop
  * boot trns trns nop  trns trns || trns trns  nop trns trns trns
  */
-#define FN2_LAYER KEYMAP(                                                         \
-         KC_VOLU, KC_NO, KC_NO, KC_NO, KC_NO, KC_F12, KC_F7, KC_F8, KC_F9, KC_NO, \
-         KC_VOLD, KC_NO, KC_NO, KC_NO, KC_NO, KC_F10, KC_F4, KC_F5, KC_F6, KC_NO, \
-         KC_MUTE, KC_NO, KC_NO, KC_NO, KC_NO, KC_F11, KC_F1, KC_F2, KC_F3, KC_NO, \
-         KC_FN3, KC_TRNS, KC_TRNS, KC_NO, KC_TRNS,                                \
-         KC_TRNS, KC_TRNS,                                                        \
+#define FN2_LAYER KEYMAP(                                                                 \
+         KC__VOLUP, KC_FN10, KC_FN4, KC_FN11, KC_FN8, KC_F12, KC_F7, KC_F8, KC_F9, KC_NO, \
+         KC__VOLDOWN, KC_FN6, KC_FN5, KC_FN7, KC_FN9, KC_F10, KC_F4, KC_F5, KC_F6, KC_NO, \
+         KC__MUTE, KC_NO, KC_NO, KC_NO, KC_NO, KC_F11, KC_F1, KC_F2, KC_F3, KC_NO,        \
+         KC_FN3, KC_TRNS, KC_TRNS, KC_NO, KC_TRNS,                                        \
+         KC_TRNS, KC_TRNS,                                                                \
          KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -64,10 +64,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t PROGMEM fn_actions[] = {
+  // function layers
   [0] = ACTION_LAYER_MOMENTARY(1),
   [1] = ACTION_LAYER_MOMENTARY(2),
   [2] = ACTION_LAYER_MOMENTARY(3),
-  [3] = ACTION_FUNCTION(BOOTLOADER)
+
+  // reset key
+  [3] = ACTION_FUNCTION(BOOTLOADER),
+
+  // mouse movement
+  [4] = ACTION_MOUSEKEY(KC_MS_U),
+  [5] = ACTION_MOUSEKEY(KC_MS_D),
+  [6] = ACTION_MOUSEKEY(KC_MS_L),
+  [7] = ACTION_MOUSEKEY(KC_MS_R),
+  // mouse wheel
+  [8] = ACTION_MOUSEKEY(KC_WH_U),
+  [9] = ACTION_MOUSEKEY(KC_WH_D),
+  // mouse click
+  [10] = ACTION_MOUSEKEY(KC_BTN1),
+  [11] = ACTION_MOUSEKEY(KC_BTN2)
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
