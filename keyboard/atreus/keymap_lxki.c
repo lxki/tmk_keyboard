@@ -109,10 +109,7 @@ void action_function(keyrecord_t *record, uint8_t id, uint8_t opt) {
       // Get the previous mods value
       uint8_t prev_mods = get_mods();
 
-      // When a shift key is pressed, check previous mods value.
-      // If 0, then no shift key is held down.
-      // If not 0, then at least one shift key is held down.
-      if (prev_mods != 0) {
+      if (prev_mods & (MOD_BIT(KC_LSHIFT) | MOD_BIT(KC_RSHIFT))) {
         // Toggle capslock if more than one shift key is pressed. 
         add_key(KC_CAPSLOCK);
         send_keyboard_report();
