@@ -29,13 +29,13 @@
          KC_TRNS, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS)
 
 /*
- *  ~    -    .    ,    =        ||      pgup  home  up  end  nop
+ *  ~    -    ,    .    =        ||      pgup  home  up  end  nop
  *  9    0    [    ]    "        ||      pgdn  left down rght  nop
  * nop  nop  nop  nop   \        ||      nop   nop  nop  nop  nop
  * trns nop  trns nop  trns del  || bspc trns  trns trns trns trns
  */
 #define FN1_LAYER KEYMAP(                                                                   \
-         KC_GRV, KC_MINS, KC_DOT, KC_COMM, KC_EQL, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_NO,  \
+         KC_GRV, KC_MINS, KC_COMM, KC_DOT, KC_EQL, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_NO,  \
          KC_9, KC_0, KC_LBRC, KC_RBRC, KC_QUOT, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              \
          KC_TRNS, KC_NO, KC_TRNS, KC_NO, KC_TRNS,                                           \
