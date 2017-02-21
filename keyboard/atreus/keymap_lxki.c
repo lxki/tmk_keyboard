@@ -16,13 +16,13 @@
 
 /*
  * nop  home  up  end  pgup      ||       nop   7    8    9   nop
- * tab  left down rght pgdn      ||        0    4    5    6   nop
+ * nop  left down rght pgdn      ||        0    4    5    6   nop
  * nop  nop  nop  nop  nop       ||       nop   1    2    3   nop
  * trns trns trns trns trns del  || bspc trns trns trns trns trns
  */
 #define FN0_LAYER KEYMAP(                                                            \
          KC_NO, KC_HOME, KC_UP, KC_END, KC_PGUP, KC_NO, KC_7, KC_8, KC_9, KC_NO,     \
-         KC_TAB, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_0, KC_4, KC_5, KC_6, KC_NO, \
+         KC_NO, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDN, KC_0, KC_4, KC_5, KC_6, KC_NO,  \
          KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_1, KC_2, KC_3, KC_NO,          \
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                \
          KC_DEL, KC_BSPC,                                                            \
@@ -30,16 +30,16 @@
 
 /*
  *  ~    -    ,    .    =        ||      pgup  home  up  end  nop
- *  9    0    [    ]    "        ||      pgdn  left down rght  nop
- * nop  nop  nop  nop   \        ||      nop   nop  nop  nop  nop
+ *  \    "    [    ]   tab       ||      pgdn  left down rght nop
+ * nop  nop   9    0   nop       ||      nop   nop  nop  nop  nop
  * trns trns trns trns trns del  || bspc trns  trns trns trns trns
  */
-#define FN1_LAYER KEYMAP(                                                                   \
-         KC_GRV, KC_MINS, KC_COMM, KC_DOT, KC_EQL, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_NO,  \
-         KC_9, KC_0, KC_LBRC, KC_RBRC, KC_QUOT, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
-         KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,              \
-         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                       \
-         KC_DEL, KC_BSPC,                                                                   \
+#define FN1_LAYER KEYMAP(                                                                        \
+         KC_GRV, KC_MINS, KC_COMM, KC_DOT, KC_EQL, KC_PGUP, KC_HOME, KC_UP, KC_END, KC_NO,       \
+         KC_BSLS, KC_QUOT, KC_LBRC, KC_RBRC, KC_TAB, KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO, \
+         KC_NO, KC_NO, KC_9, KC_0, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,                     \
+         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                                            \
+         KC_DEL, KC_BSPC,                                                                        \
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
 
 /*
